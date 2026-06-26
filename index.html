@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de senha</title>
+
+    <!-- Segurança básica para projeto estático -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self';">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="conteudo">
+        <div class="conteudo-titulo">
+            <img src="Imagess.png" alt="cadeado fechado">
+            <h2 class="titulo-principal">Gerador de senhas da AMANDINHA</h2>
+            <h3 class="titulo-secundario">Gere instantaneamente uma senha aleatória e segura.</h3>
+        </div>
+
+        <!-- SENHA GERADA -->
+        <div class="conteudo-senha">
+            <label for="campo-senha">Senha</label>
+            <div class="senha-area">
+                <input name="senha" type="text" id="campo-senha" readonly>
+                <button id="copiar-senha" class="botao-copiar">Copiar</button>
+            </div>
+            <p id="mensagem-copia" class="mensagem-copia"></p>
+            <p id="mensagem-erro" class="mensagem-erro"></p>
+        </div>
+
+        <div class="parametro">
+            <h3 class="parametro-titulo">Personalize sua senha</h3>
+
+            <div class="parametro-coluna__senha">
+
+                <!-- TAMANHO -->
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Número de caracteres</h4>
+                    <div class="parametro-senha-botoes">
+                        <button class="parametro-senha__botao" id="diminuir">-</button>
+                        <p class="parametro-senha__texto">12</p>
+                        <button class="parametro-senha__botao" id="aumentar">+</button>
+                    </div>
+                </div>
+
+                <!-- CARACTERÍSTICAS -->
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Características da senha</h4>
+
+                    <div class="parametro-senha-checkbox">
+                        <input name="maiusculo" type="checkbox" class="checkbox" checked>
+                        <label for="maiusculo">Letras maiúsculas</label>
+                    </div>
+
+                    <div class="parametro-senha-checkbox">
+                        <input name="minusculo" type="checkbox" class="checkbox" checked>
+                        <label for="minusculo">Letras minúsculas</label>
+                    </div>
+
+                    <div class="parametro-senha-checkbox">
+                        <input name="numero" type="checkbox" class="checkbox" checked>
+                        <label for="numero">Números</label>
+                    </div>
+
+                    <div class="parametro-senha-checkbox">
+                        <input name="simbolo" type="checkbox" class="checkbox" checked>
+                        <label for="simbolo">Símbolos</label>
+                    </div>
+
+                    <!-- NOVAS OPÇÕES DE SEGURANÇA -->
+                    <div class="parametro-senha-checkbox">
+                        <input name="naoRepetir" type="checkbox" class="checkbox" id="nao-repetir">
+                        <label for="nao-repetir">Evitar caracteres repetidos</label>
+                    </div>
+
+                    <div class="parametro-senha-checkbox">
+                        <input name="naoAmbiguos" type="checkbox" class="checkbox" id="nao-ambiguos">
+                        <label for="nao-ambiguos">Evitar caracteres ambíguos (O, 0, l, 1)</label>
+                    </div>
+                </div>
+
+                <!-- FORÇA -->
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Força da senha</h4>
+                    <div class="barra"></div>
+                    <div class="forca fraca"></div>
+
+                    <div class="parametro-senha-textos">
+                        <p>Fraca</p>
+                        <p>Média</p>
+                        <p>Forte</p>
+                    </div>
+
+                    <p class="entropia"></p>
+                    <p class="feedback-senha"></p>
+                </div>
+            </div>
+
+            <!-- BOTÃO GERAR -->
+            <div class="parametro-acoes">
+                <button id="gerar-senha" class="botao-gerar">Gerar nova senha</button>
+            </div>
+
+            <!-- HISTÓRICO -->
+            <div class="historico-senhas">
+                <h4 class="parametro-senha__titulo">Últimas senhas geradas</h4>
+                <ul id="lista-historico"></ul>
+                <button id="limpar-historico" class="botao-limpar">Limpar histórico</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <strong>Gerador de Senhas da AMANDINHA</strong> •
+                Desenvolvido por <strong>AMANDINHA</strong>
+            </p>
+            <p>
+                Projeto para estudo de JavaScript •
+                <span id="ano-atual"></span>
+            </p>
+
+            <div class="footer-links">
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
